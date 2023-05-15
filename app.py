@@ -3,5 +3,5 @@ import pandas as pd
 
 st.write("""
 # My first app
-Hello *Red Hat!*
+Hello *Developers!*
 """)
