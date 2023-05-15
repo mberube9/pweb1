@@ -1,11 +1,10 @@
 FROM registry.access.redhat.com/ubi9/python-39:1-108
 
-# By default, listen on port 8081
-EXPOSE 8081/tcp
-ENV FLASK_PORT=8081
+# By default, listen on port 8501
+EXPOSE 8501/tcp
 
 # Set the working directory in the container
-WORKDIR /projects
+WORKDIR /app
 
 # Copy the dependencies file to the working directory
 COPY requirements.txt .
@@ -17,4 +16,4 @@ RUN pip install -r requirements.txt
 COPY . .
 
 # Specify the command to run on container start
-CMD [ "python", "./app.py" ]
+CMD [ "streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
