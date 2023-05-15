@@ -1,14 +1,7 @@
-from flask import Flask
-import os
+import streamlit as st
+import pandas as pd
 
-app = Flask(__name__)
-
-@app.route('/')
-def hello():
-    return "Hello Red Hat user!"
-
-if __name__ == '__main__':
-    port = os.environ.get('FLASK_PORT') or 8080
-    port = int(port)
-
-    app.run(port=port,host='0.0.0.0')
+st.write("""
+# My first app
+Hello *world!*
+""")
